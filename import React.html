@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>notepad</title>
+</head>
+<style type="text/css">
+ol,ul{
+display:block;
+list-style-type:none;
+margin:3px;
+}
+</style><body>
+<div>import React, { useState } from 'react';<br>
+import { View, Text, TextInput, Button, FlatList } from 'react-native';<br>
+<br>
+export default function App() {<br>
+&nbsp; const [id, setId] = useState('');<br>
+&nbsp; const [name, setName] = useState('');<br>
+&nbsp; const [car, setCar] = useState('');<br>
+&nbsp; const [pieces, setPieces] = useState(['Pneu', 'Frein', 'Moteur']);<br>
+&nbsp; const [selectedPiece, setSelectedPiece] = useState(null);<br>
+<br>
+&nbsp; const handleSubmit = () =&gt; {<br>
+&nbsp;&nbsp;&nbsp; // Envoyer les donn&#233;es au serveur<br>
+&nbsp;&nbsp;&nbsp; // ...<br>
+&nbsp; };<br>
+<br>
+&nbsp; const handlePieceSelect = (piece) =&gt; {<br>
+&nbsp;&nbsp;&nbsp; setSelectedPiece(piece);<br>
+&nbsp; };<br>
+<br>
+&nbsp; return (<br>
+&nbsp;&nbsp;&nbsp; &lt;View&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Text&gt;Welcome to Mohamed's After-Sales Service&lt;/Text&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Button title="Inscrivez-vous" onPress={() =&gt; {}} /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextInput placeholder="ID" value={id} onChangeText={setId} /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextInput placeholder="Name" value={name} onChangeText={setName} /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextInput placeholder="Car Type" value={car} onChangeText={setCar} /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Button title="Envoyer" onPress={handleSubmit} /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;FlatList<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data={pieces}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; renderItem={({ item }) =&gt; (<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Text onPress={() =&gt; handlePieceSelect(item)}&gt;{item}&lt;/Text&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {selectedPiece &amp;&amp; (<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;View&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Text&gt;Passe de commande pour {selectedPiece}&lt;/Text&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextInput placeholder="Address" /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TextInput placeholder="Num&#233;ro" /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/View&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )}<br>
+&nbsp;&nbsp;&nbsp; &lt;/View&gt;<br>
+&nbsp; );<br>
+}<br>
+</div>
+</body>
+</html>

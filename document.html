@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>notepad</title>
+</head>
+<style type="text/css">
+ol,ul{
+display:block;
+list-style-type:none;
+margin:3px;
+}
+</style><body>
+<div>document.getElementById("incri").onclick = function(){<br>
+&nbsp; document.getElementById("form").style.display = "block";<br>
+}<br>
+<br>
+document.getElementById("envoyer").onclick = function(){<br>
+&nbsp; var id = document.getElementById("id").value;<br>
+&nbsp; var nom = document.getElementById("nom").value;<br>
+&nbsp; var voiture = document.getElementById("voiture").value;<br>
+&nbsp; // &#1607;&#1606;&#1575;&#1548; &#1610;&#1605;&#1603;&#1606;&#1603; &#1573;&#1585;&#1587;&#1575;&#1604; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1573;&#1604;&#1609; &#1575;&#1604;&#1587;&#1610;&#1585;&#1601;&#1585;<br>
+&nbsp; var pieces = ["Pneu", "Frein", "Moteur"];<br>
+&nbsp; var ul = document.getElementById("pieces");<br>
+&nbsp; ul.innerHTML = "";<br>
+&nbsp; pieces.forEach(function(piece){<br>
+&nbsp;&nbsp;&nbsp; var li = document.createElement("li");<br>
+&nbsp;&nbsp;&nbsp; li.textContent = piece;<br>
+&nbsp;&nbsp;&nbsp; ul.appendChild(li);<br>
+&nbsp; });<br>
+&nbsp; document.getElementById("form").style.display = "none";<br>
+&nbsp; document.getElementById("bagage").style.display = "block";<br>
+}</div>
+</body>
+</html>
